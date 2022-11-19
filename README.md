@@ -39,8 +39,9 @@
 # 유빈
 - NetWork Module에서 DEBUG와 BASE_URL이 import되지 않는 에러
 <br>
-  => build:clean project -> build:rebuild project로 해결함
+  =>build:clean project -> build:rebuild project로 해결함
 <br>
+
 - Binding이 안되는 문제
 <br>
   => xml파일 내부 코드 layout으로 감싸서 해결
