@@ -1,60 +1,74 @@
 package org.sopt.sopkathon10.presentation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import dagger.hilt.android.AndroidEntryPoint
 import org.sopt.sopkathon10.R
+import org.sopt.sopkathon10.data.dto.response.ResponseBase
+import org.sopt.sopkathon10.data.dto.response.ResponseGetMessage
+import org.sopt.sopkathon10.data.service.SopkathonService
+import org.sopt.sopkathon10.databinding.FragmentTabReadBinding
+import org.sopt.sopkathon10.util.binding.BindingFragment
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+@AndroidEntryPoint
+class TabReadFragment : BindingFragment<FragmentTabReadBinding> (R.layout.fragment_tab_read){
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TabReadFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class TabReadFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    @Inject
+    lateinit var sopkathonService: SopkathonService
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    var nickname: String = "천재"
+    private var messageList: MutableList<ResponseGetMessage> = mutableListOf()
+
+    private lateinit var entireAdapter: EntireAdapter
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        nickname = "천재"
+        initRecyclerView()
+        initMessageInfo()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab_read, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TabReadFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TabReadFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun initMessageInfo() {
+        sopkathonService.getMessage(nickname, 2).enqueue(object :
+            Callback<ResponseBase<List<ResponseGetMessage>>> {
+            override fun onResponse(
+                call: Call<ResponseBase<List<ResponseGetMessage>>>,
+                response: Response<ResponseBase<List<ResponseGetMessage>>>
+            ) {
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        messageList.clear()
+                        for (message in it.data) {
+                            messageList.add(message)
+                            Log.i("messagedd", message.toString())
+                        }
+                        entireAdapter.setItems(messageList)
+                    }
                 }
             }
+
+            override fun onFailure(
+                call: Call<ResponseBase<List<ResponseGetMessage>>>,
+                t: Throwable
+            ) {
+                Log.e("message", "fail")
+            }
+
+        })
     }
+
+    private fun initRecyclerView() {
+        entireAdapter = EntireAdapter()
+        binding.rvTabRead.adapter = entireAdapter
+        entireAdapter.setItems(messageList)
+    }
+
 }
