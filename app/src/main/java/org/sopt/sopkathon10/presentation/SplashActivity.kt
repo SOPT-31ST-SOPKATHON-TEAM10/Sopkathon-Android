@@ -18,20 +18,5 @@ class SplashActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_sp
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.dummyResult.observe(this) {
-            // UI 로직 처리
-
-
-        }
-        viewModel.errorCode.observe(this) {
-            // 에러 메시지(스낵바, 토스트)
-            override fun onFailure(call: Call<Response>, t: Throwable) {
-                Toast.makeText(this, "에러 발생", Toast.LENGTH_SHORT).show()
-        }
     }
-
-    private fun initLayout() {
-
-    }
-}
 }
