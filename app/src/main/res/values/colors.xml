@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- General -->
+    <color name="main">#F7C066</color>
+    <color name="sub_100">#01676A</color>
+    <color name="sub_200">#F9ECC5</color>
+
+    <!-- Yellow -->
+    <color name="yellow_100">#FFF8EC</color>
+
+    <!-- Gray -->
+    <color name="gray_100">#5B5B5B</color>
+    <color name="gray_200">#7A7A7A</color>
+    <color name="gray_300">#AFAFAF</color>
+    <color name="gray_400">#CDCDCD</color>
+    <color name="gray_500">#E7E7E7</color>
 </resources>
