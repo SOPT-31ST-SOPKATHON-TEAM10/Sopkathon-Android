@@ -88,6 +88,7 @@
             app:layout_constraintTop_toTopOf="@id/img_music_letter" />
 
         <TextView
+            android:id="@+id/tv_message"
             style="@style/Style.ImageButton.Basic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
