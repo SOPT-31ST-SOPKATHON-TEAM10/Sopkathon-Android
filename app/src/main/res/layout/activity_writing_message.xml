@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.WritingMessageActivity">
+
+        <View
+            android:id="@+id/view_writing_message_top"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/main"
+            app:layout_constraintTop_toBottomOf="@id/tv_writing_message_title" />
+
+        <TextView
+            android:id="@+id/tv_writing_message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="21dp"
+            android:text="메세지 보내기"
+            android:textAppearance="@style/TextAppearance.H1.Pretendard22_Bold"
+            app:layout_constraintBottom_toTopOf="@+id/view_writing_message_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_send_message"
+            style="@style/Style.ImageButton.Basic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="21dp"
+            android:src="@drawable/ic_send_message"
+            app:layout_constraintBottom_toTopOf="@+id/view_writing_message_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="18dp"
+            android:text="받는사람"
+            android:textAppearance="@style/TextAppearance.b3.Pretendard16_Medium"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_writing_message_top" />
+
+        <EditText
+            android:id="@+id/et_receiver"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="26dp"
+            android:hint="닉네임을 입력해주세요."
+            android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+            android:textColorHint="@color/gray_100"
+            app:layout_constraintBottom_toBottomOf="@id/tv_receiver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_receiver"
+            app:layout_constraintTop_toTopOf="@id/tv_receiver" />
+
+        <TextView
+            android:id="@+id/tv_spinner_catagory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="카테고리"
+            android:textAppearance="@style/TextAppearance.b3.Pretendard16_Medium"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/tv_receiver"
+            app:layout_constraintTop_toBottomOf="@+id/tv_receiver" />
+
+        <Spinner
+            android:id="@+id/spinner_catagory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="26dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_spinner_catagory"
+            app:layout_constraintTop_toTopOf="@+id/tv_spinner_catagory" />
+
+        <ImageView
+            android:id="@+id/iv_writing_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/img_opened_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_catagory" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:text="사건의 지평선"
+            android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+            android:textColor="@color/gray_100"
+            app:layout_constraintEnd_toEndOf="@+id/iv_writing_message"
+            app:layout_constraintStart_toStartOf="@+id/iv_writing_message"
+            app:layout_constraintTop_toTopOf="@+id/iv_writing_message" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="윤하"
+            android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+            android:textColor="@color/gray_100"
+            app:layout_constraintEnd_toEndOf="@+id/iv_writing_message"
+            app:layout_constraintStart_toStartOf="@+id/iv_writing_message"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/shape_message_edittext_background"
+            android:maxLines="8"
+            android:paddingHorizontal="17dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="17dp"
+            android:hint="내용입니다ㅏㅏ"
+            android:textAppearance="@style/TextAppearance.b3.Pretendard16_Medium"
+            android:textColor="@color/gray_100"
+            android:textColorHint="@color/gray_100"
+            app:layout_constraintTop_toBottomOf="@+id/iv_writing_message" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

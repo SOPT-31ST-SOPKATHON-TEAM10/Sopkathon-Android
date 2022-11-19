@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.MessageListActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_menu_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                style="@style/Style.ImageButton.Basic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="21dp"
+                android:layout_marginStart="13dp"
+                android:minWidth="28dp"
+                android:minHeight="28dp"
+                android:src="@drawable/ic_back_left"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/iv_letter"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_marginVertical="25dp"
+                android:src="@drawable/ic_header_letter"
+                app:layout_constraintStart_toEndOf="@+id/btn_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_feeling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="22dp"
+                android:layout_marginLeft="5dp"
+                android:text="들으면서 네 생각 났어"
+                android:textAppearance="@style/TextAppearance.H2.Pretendard20_Bold"
+                app:layout_constraintStart_toEndOf="@+id/iv_letter"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_message_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_menu_list"
+            app:tabIndicatorColor="@color/main"
+            app:tabIndicatorHeight="4dp"
+            app:tabTextAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+            app:tabTextColor="@color/sub_100">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전체" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="읽어 본" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="안읽어 본" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_message_list" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
