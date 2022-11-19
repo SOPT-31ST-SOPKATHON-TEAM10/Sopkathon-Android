@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="org.sopt.sopkathon10.presentation.HomeViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.HomeActivity">
+
+        <TextView
+            android:id="@+id/tv_writing_message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="23dp"
+            android:text="lyndy 님"
+            android:textAppearance="@style/TextAppearance.H1.Pretendard22_Bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="21dp"
+            android:background="@color/main"
+            app:layout_constraintTop_toBottomOf="@id/tv_writing_message_title" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="23dp"-->
+<!--            android:text="듣고 싶은 기분을 선택하세요"-->
+<!--            android:textAppearance="@style/TextAppearance.H1.Pretendard22_Bold"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <include-->
+<!--            android:id="@+id/view_one"-->
+<!--            layout="@layout/item_letter"-->
+<!--            bind:letter="@{viewModel.letters.get(0)}"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf=""/>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

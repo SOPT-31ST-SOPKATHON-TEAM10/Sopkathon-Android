@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".application.SopkathonApplication"
         android:allowBackup="true"
@@ -16,21 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.WritingMessageActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="false" />
+
         <activity
             android:name=".presentation.MainActivity"
-            android:exported="true">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
-
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".presentation.OnboardingActivity"
             android:exported="false" />
@@ -39,6 +33,9 @@
             android:exported="false" />
         <activity
             android:name=".presentation.DetailActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".presentation.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +43,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.SplashActivity" android:exported="true" />
+        <activity
+            android:name=".presentation.MessageListActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
