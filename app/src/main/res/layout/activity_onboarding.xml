@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main"
+        tools:context=".presentation.OnboardingActivity">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="55dp"
+            android:src="@drawable/ic_onboarding_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/shape_border_radius_10"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="40dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="40dp" />
+
+            <TextView
+                android:id="@+id/tv_onboarding_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:text="LP를 통해\n소중한 사람에게 선물하세요!"
+                android:textAppearance="@style/TextAppearance.H2.Pretendard20_Bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_onboarding_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:text="로그인 없이 닉네임만 정하면\n계정을 생성할 수 있어요."
+                android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_onboarding_title" />
+
+            <EditText
+                android:id="@+id/et_nickname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/selector_nickname_edittext_background_color"
+                android:hint="닉네임을 입력해주세요."
+                android:padding="10dp"
+                android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+                android:textColorHint="@color/gray_100"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_onboarding_guide" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_enter"
+                style="@style/Style.Material.Button.Basic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/selector_nickname_edittext_background_color"
+                android:paddingVertical="14dp"
+                android:text="들어가기"
+                android:textAppearance="@style/TextAppearance.b1.Pretendard18_SemiBold"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/et_nickname" />
+
+            <TextView
+                android:id="@+id/tv_signup_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:text="@string/onboarding_signup_guide"
+                android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+                android:textColor="#353535"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/btn_enter" />
+
+            <TextView
+                android:id="@+id/tv_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:text="@string/onboarding_signup"
+                android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+                android:textColor="@color/main"
+                app:layout_constraintStart_toEndOf="@id/tv_signup_guide"
+                app:layout_constraintTop_toTopOf="@id/tv_signup_guide" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#F7C066"
+            android:src="@drawable/img_ip_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
