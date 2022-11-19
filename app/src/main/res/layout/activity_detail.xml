@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.DetailActivity">
+
+        <ImageButton
+            android:id="@+id/btn_backward"
+            style="@style/Style.ImageButton.Basic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="21dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="23dp"
+            android:text="내 기분 오늘 정말 좋아"
+            android:textAppearance="@style/TextAppearance.H1.Pretendard22_Bold"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@id/divider"
+            app:layout_constraintStart_toEndOf="@id/btn_backward"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="21dp"
+            android:background="@color/gray_200"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <ImageButton
+            android:id="@+id/img_letter"
+            style="@style/Style.ImageButton.Basic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:src="@drawable/ic_letter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/tv_music_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:text="사건의 지평선"
+            android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+            app:layout_constraintEnd_toEndOf="@id/img_letter"
+            app:layout_constraintStart_toStartOf="@id/img_letter"
+            app:layout_constraintTop_toTopOf="@id/img_letter" />
+
+        <TextView
+            android:id="@+id/tv_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="124dp"
+            android:text="윤하"
+            android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
+            app:layout_constraintEnd_toEndOf="@id/img_letter"
+            app:layout_constraintStart_toStartOf="@id/img_letter"
+            app:layout_constraintTop_toTopOf="@id/img_letter" />
+
+        <TextView
+            style="@style/Style.ImageButton.Basic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginVertical="52dp"
+            android:background="@drawable/shape_message_edittext_background"
+            android:paddingHorizontal="14dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="220dp"
+            android:text="내용입력이지롱"
+            android:textAppearance="@style/TextAppearance.b3.Pretendard16_Medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_letter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
