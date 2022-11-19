@@ -1,13 +1,14 @@
 package org.sopt.sopkathon10.data.service
 
-import org.sopt.sopkathon10.data.dto.response.ResponseDummy
+import org.sopt.sopkathon10.data.dto.request.RequestMessage
+import org.sopt.sopkathon10.data.dto.response.ResponseBase
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 interface SopkathonService {
-    @GET("comment/album/{albumId}")
-    fun getComment(
-        @Path("albumId") albumId: String
-    ): Call<ResponseDummy>
+    @POST("/message")
+    fun writeMessage(
+        @Body message: RequestMessage
+    ): Call<ResponseBase<Int>>
 }
