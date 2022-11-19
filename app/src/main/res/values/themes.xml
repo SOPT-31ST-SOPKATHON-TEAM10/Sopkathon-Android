@@ -15,6 +15,37 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!-- Text Appearance -->
+    <style name="TextAppearance.H1.Pretendard22_Bold" parent="">
+        <item name="android:textSize">22dp</item>
+        <item name="android:fontFamily">@font/pretendard_b</item>
+    </style>
+
+    <style name="TextAppearance.H2.Pretendard20_Bold" parent="">
+        <item name="android:textSize">20dp</item>
+        <item name="android:fontFamily">@font/pretendard_b</item>
+    </style>
+
+    <style name="TextAppearance.b1.Pretendard18_SemiBold" parent="">
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/pretendard_sb</item>
+    </style>
+
+    <style name="TextAppearance.b2.Pretendard13_SemiBold" parent="">
+        <item name="android:textSize">13dp</item>
+        <item name="android:fontFamily">@font/pretendard_sb</item>
+    </style>
+
+    <style name="TextAppearance.b3.Pretendard16_Medium" parent="">
+        <item name="android:textSize">16dp</item>
+        <item name="android:fontFamily">@font/pretendard_m</item>
+    </style>
+
+    <style name="TextAppearance.b4.Pretendard13_Medium" parent="">
+        <item name="android:textSize">13dp</item>
+        <item name="android:fontFamily">@font/pretendard_m</item>
+    </style>
+
     <!-- Style -->
     <style name="Style.CircleImageView.Half" parent="">
         <item name="cornerFamily">rounded</item>
@@ -37,5 +68,4 @@
         <item name="android:minWidth">0dp</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
-
 </resources>
