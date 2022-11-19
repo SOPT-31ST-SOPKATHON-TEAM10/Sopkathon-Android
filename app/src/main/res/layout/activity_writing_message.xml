@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="request"
+            type="org.sopt.sopkathon10.data.dto.request.RequestMessage" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,6 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="13dp"
             android:layout_marginEnd="26dp"
+            android:text="@{request.nickname}"
             android:hint="닉네임을 입력해주세요."
             android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
             android:textColorHint="@color/gray_100"
@@ -97,30 +105,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinner_catagory" />
 
-        <TextView
-            android:id="@+id/textView"
+        <EditText
+            android:id="@+id/et_song_title"
+            style="@style/Style.ImageButton.Basic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="75dp"
-            android:text="사건의 지평선"
+            android:hint="사건의 지평선"
+            android:text="@{request.title}"
             android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
             android:textColor="@color/gray_100"
+            android:textColorHint="@color/gray_100"
             app:layout_constraintEnd_toEndOf="@+id/iv_writing_message"
             app:layout_constraintStart_toStartOf="@+id/iv_writing_message"
             app:layout_constraintTop_toTopOf="@+id/iv_writing_message" />
 
-        <TextView
+        <EditText
+            android:id="@+id/et_song_artist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="윤하"
+            style="@style/Style.ImageButton.Basic"
+            android:hint="윤하"
+            android:text="@{request.artist}"
             android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
             android:textColor="@color/gray_100"
+            android:textColorHint="@color/gray_100"
             app:layout_constraintEnd_toEndOf="@+id/iv_writing_message"
             app:layout_constraintStart_toStartOf="@+id/iv_writing_message"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/et_song_title" />
 
         <EditText
+            android:id="@+id/et_write_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
@@ -131,7 +147,8 @@
             android:paddingHorizontal="17dp"
             android:paddingTop="20dp"
             android:paddingBottom="17dp"
-            android:hint="내용입니다ㅏㅏ"
+            android:hint="내용 입력하기"
+            android:text="@{request.contents}"
             android:textAppearance="@style/TextAppearance.b3.Pretendard16_Medium"
             android:textColor="@color/gray_100"
             android:textColorHint="@color/gray_100"
