@@ -23,6 +23,7 @@ class TabNotReadFragment :
     lateinit var sopkathonService: SopkathonService
 
     var nickname: String = "천재"
+    var categoryId: Int = 1
     private var messageList: MutableList<ResponseGetMessage> = mutableListOf()
 
     private lateinit var notReadAdapter: NotReadAdapter
@@ -34,7 +35,7 @@ class TabNotReadFragment :
     }
 
     private fun initMessageInfo() {
-        sopkathonService.getMessage(nickname, 0).enqueue(object :
+        sopkathonService.getMessage(categoryId, nickname, 0).enqueue(object :
             Callback<ResponseBase<List<ResponseGetMessage>>> {
             override fun onResponse(
                 call: Call<ResponseBase<List<ResponseGetMessage>>>,

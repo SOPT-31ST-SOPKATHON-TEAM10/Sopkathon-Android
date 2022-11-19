@@ -1,13 +1,11 @@
 package org.sopt.sopkathon10.data.service
 
 import org.sopt.sopkathon10.data.dto.request.RequestMessage
-import org.sopt.sopkathon10.data.dto.response.ResponseGetMessage
 import org.sopt.sopkathon10.data.dto.response.ResponseBase
+import org.sopt.sopkathon10.data.dto.response.ResponseGetMessage
+import org.sopt.sopkathon10.data.dto.response.ResponseShowMessage
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface SopkathonService {
     @POST("/message")
@@ -15,9 +13,15 @@ interface SopkathonService {
         @Body message: RequestMessage
     ): Call<ResponseBase<Int>>
 
-    @GET("message/1")
+    @GET("/message/{categoryId}")
     fun getMessage(
-        @Query("nickname") nickname:String,
-        @Query("isopened") isOpened:Int
-    ) :Call <ResponseBase<List<ResponseGetMessage>>>
+        @Path("categoryId") categoryId: Int,
+        @Query("nickname") nickname: String,
+        @Query("isopened") isOpened: Int
+    ): Call<ResponseBase<List<ResponseGetMessage>>>
+
+    @GET("/message/{messageId}")
+    fun showMessage(
+        @Path("messageId") messageId: Int
+    ): Call<ResponseBase<ResponseShowMessage>>
 }

@@ -21,6 +21,7 @@ class TabEntireFragment : BindingFragment<FragmentTabEntireBinding>(R.layout.fra
     lateinit var sopkathonService: SopkathonService
 
     var nickname: String = "천재"
+    var categoryId: Int = 1
     private var messageList: MutableList<ResponseGetMessage> = mutableListOf()
 
     private lateinit var entireAdapter: EntireAdapter
@@ -33,7 +34,7 @@ class TabEntireFragment : BindingFragment<FragmentTabEntireBinding>(R.layout.fra
     }
 
     private fun initMessageInfo() {
-        sopkathonService.getMessage(nickname, 2).enqueue(object :
+        sopkathonService.getMessage(categoryId, nickname, 2).enqueue(object :
             Callback<ResponseBase<List<ResponseGetMessage>>> {
             override fun onResponse(
                 call: Call<ResponseBase<List<ResponseGetMessage>>>,
