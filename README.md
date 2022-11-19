@@ -33,3 +33,27 @@
 [Convention 보러가기 Click ✔](https://github.com/SOPT-31ST-SOPKATHON-TEAM10/Sopkathon-Android/wiki/Convention)
 
 <br>
+
+## Error Solved
+
+유빈
+- NetWork Module에서 DEBUG와 BASE_URL이 import되지 않는 에러
+  => build:clean project -> build:rebuild project로 해결함
+- Binding이 안되는 문제
+  => xml파일 내부 코드 layout으로 감싸서 해결
+  
+<br>
+
+민영
+- Detail view에서 메시지 텍스트 값 max line 설정을 해결하지 못함
+  => 스크롤뷰를 통해 해결
+
+<br>
+
+수민
+- 뷰에서 margin값을 그대로 주었는데도 불구하고 EditText가 넓게 펼쳐지지 않는 문제
+- HTTP FAILED:java.net.SocketTimeoutException: failed to connect to /3.201.144.66 (port 3000) from /10.0.2.16 (port 48152) after 10000ms 에러
+  => 요청을 시작한 후 서버와의 연결이 제한 시간 내에 이루어지지 않을 경우 발생하는 에러
+  => 에뮬레이터로 실행해서 발생한 문제-> 앱 실행 환경을 바꿔서 해결
+
+<br>
