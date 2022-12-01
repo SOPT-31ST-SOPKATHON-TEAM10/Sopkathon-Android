@@ -9,7 +9,6 @@ import org.sopt.sopkathon10.data.dto.ResponseLetter.Category
 import org.sopt.sopkathon10.data.local.LpPreference
 import org.sopt.sopkathon10.data.service.SopkathonService
 import org.sopt.sopkathon10.domain.entity.Letter
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -28,7 +27,6 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun fetchUserInfo() {
-        Timber.d(lpPreference.nickname)
         _nickname.value = lpPreference.nickname
     }
 
