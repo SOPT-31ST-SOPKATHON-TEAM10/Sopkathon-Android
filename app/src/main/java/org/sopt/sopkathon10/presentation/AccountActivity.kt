@@ -10,24 +10,20 @@ import org.sopt.sopkathon10.util.binding.BindingActivity
 
 @AndroidEntryPoint
 class AccountActivity : BindingActivity<ActivityAccountBinding>(R.layout.activity_account) {
-    private val viewModel: DummyViewModel by viewModels()
+    private val viewModel: OnboardingViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
-        addListeners()
-    }
-
-    private fun initLayout() {
-    }
-
-    private fun addListeners() {
-        binding.btnEnter.setOnClickListener {
-            startActivity(Intent(this, MessageListActivity::class.java))
-        }
+        addObservers()
     }
 
     private fun addObservers() {
-
+        viewModel.isCompletedSignIn.observe(this) {
+            setResult(RESULT_OK, Intent(this, OnboardingActivity::class.java))
+            finish()
+        }
     }
 }

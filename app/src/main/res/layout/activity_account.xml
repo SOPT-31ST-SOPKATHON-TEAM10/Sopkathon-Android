@@ -3,11 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.sopt.sopkathon10.presentation.OnboardingViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/main"
-        tools:context=".presentation.OnboardingActivity">
+        tools:context=".presentation.AccountActivity">
 
         <ImageView
             android:id="@+id/iv_logo"
@@ -61,6 +68,7 @@
                 android:background="@drawable/selector_nickname_edittext_background_color"
                 android:hint="닉네임을 입력해주세요."
                 android:padding="10dp"
+                android:text="@={viewModel.nickname}"
                 android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
                 android:textColorHint="@color/gray_100"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
@@ -76,6 +84,7 @@
                 android:backgroundTint="@color/selector_nickname_edittext_background_color"
                 android:paddingVertical="14dp"
                 android:text="생성하기"
+                android:onClick="@{() -> viewModel.createAccount()}"
                 android:textAppearance="@style/TextAppearance.b1.Pretendard18_SemiBold"
                 app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"

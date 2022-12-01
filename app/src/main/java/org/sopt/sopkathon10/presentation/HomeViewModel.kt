@@ -6,19 +6,30 @@ import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import org.sopt.sopkathon10.data.dto.ResponseLetter
 import org.sopt.sopkathon10.data.dto.ResponseLetter.Category
+import org.sopt.sopkathon10.data.local.LpPreference
 import org.sopt.sopkathon10.data.service.SopkathonService
 import org.sopt.sopkathon10.domain.entity.Letter
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val sopkathonService: SopkathonService,
+    private val lpPreference: LpPreference,
 ) : ViewModel() {
     private val _letters = MutableLiveData<List<Letter>>()
     val letters: LiveData<List<Letter>> get() = _letters
+    private val _nickname = MutableLiveData<String>()
+    val nickname: LiveData<String> get() = _nickname
 
     init {
+        fetchUserInfo()
         fetchLetters()
+    }
+
+    private fun fetchUserInfo() {
+        Timber.d(lpPreference.nickname)
+        _nickname.value = lpPreference.nickname
     }
 
     private fun fetchLetters() {
