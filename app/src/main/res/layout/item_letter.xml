@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="letter" type="org.sopt.sopkathon10.presentation.model.LetterInfo"/>
+
+        <variable
+            name="letter"
+            type="org.sopt.sopkathon10.domain.entity.Letter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="8dp">
+        android:paddingVertical="9dp">
 
         <ImageView
             android:id="@+id/iv_letter"
-            android:src="@{context.getDrawable(letter.letterCategory.imgRes)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@{context.getDrawable(letter.categoryImageType.imgRes)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -26,33 +29,37 @@
 
         <TextView
             android:id="@+id/tv_msg_title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="32dp"
             android:layout_marginTop="10dp"
-            android:text="수고했어 오늘도"
+            android:text="@{letter.title}"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@id/iv_letter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_letter" />
+            app:layout_constraintStart_toStartOf="@id/iv_letter"
+            app:layout_constraintTop_toBottomOf="@id/iv_letter"
+            tools:text="산뜻하게 하루를\n시작하고 싶은 날에는" />
 
         <TextView
-            app:visibility="@{letter.count > 0}"
             android:id="@+id/tv_message_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
             android:background="@drawable/shape_border_radius_15"
             android:backgroundTint="@color/main"
             android:fontFamily="@font/pretendard_m"
             android:paddingHorizontal="13dp"
             android:paddingVertical="3dp"
-            android:text="99"
+            android:text="@{Integer.toString(letter.messageCount)}"
             android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
             android:textColor="@color/yellow_100"
             android:textSize="22dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_letter"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibility="@{letter.messageCount > 0}"
+            tools:text="99" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
