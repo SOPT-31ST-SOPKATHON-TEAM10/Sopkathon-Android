@@ -14,6 +14,8 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
     private val adapter = LetterAdapter(::moveToLetterDetail)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
         initLayout()
         addObservers()

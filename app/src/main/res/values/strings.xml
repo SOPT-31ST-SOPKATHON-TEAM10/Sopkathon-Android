@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">sopkathon10</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="onboarding_signup_guide">아직 <font color="#F7C066"><u>LP</u></font>계정이 없으신가요?</string>
     <string name="onboarding_signup"><u>계정 만들기</u></string>
+    <string name="onboarding_account_toast_meaasage">계정을 먼저 생성해 주세요!</string>
+
+    <string name="home_user_nickname_format">%s 님</string>
 </resources>

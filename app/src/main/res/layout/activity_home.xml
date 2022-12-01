@@ -21,10 +21,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="23dp"
-            android:text="lyndy 님"
+            android:text="@{@string/home_user_nickname_format(viewModel.nickname)}"
             android:textAppearance="@style/TextAppearance.H1.Pretendard22_Bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="lyndy 님" />
 
         <View
             android:id="@+id/view_divider"

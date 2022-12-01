@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.sopt.sopkathon10.presentation.OnboardingViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,6 +79,7 @@
                 android:background="@drawable/selector_nickname_edittext_background_color"
                 android:hint="닉네임을 입력해주세요."
                 android:padding="10dp"
+                android:text="@={viewModel.nickname}"
                 android:textAppearance="@style/TextAppearance.b4.Pretendard13_Medium"
                 android:textColorHint="@color/gray_100"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
